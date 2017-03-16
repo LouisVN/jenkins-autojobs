@@ -121,7 +121,7 @@ def main(argv, create_job, list_branches, config=None):
     # Load config, set default values and compile regexes.
     if not config:
         print('loading config from "%s"' % os.path.abspath(opts.yamlconfig.name))
-        config = yaml.load(opts.yamlconfig)
+        config = yaml.load(opts.yamlconfig, Loader=yaml.Loader)
 
     config = c = get_default_config(config, opts)
 
